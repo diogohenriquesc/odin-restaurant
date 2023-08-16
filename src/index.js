@@ -1,1 +1,3 @@
-console.log('its working');
+import loadFirstPage from "./functions/first-load";
+
+loadFirstPage();

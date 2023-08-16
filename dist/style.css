@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poiret+One&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --container-max-width: 40.625rem;
+  --container-width: calc(100% - 2.5rem);
+  --clr-accent: #FE5F55;
+  --clr-neutral: #E4E2DD;
+  --ff-accent: 'Poiret One', cursive;
+  --ff-regular: 'Montserrat', sans-serif;
+}
+
+/* Helpers */
+
+.container {
+  width: var(--container-width);
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-regular);
+}
+
+/* Header */
+
+.header {
+  background-color: var(--clr-accent);
+  padding-block: 1rem;
+}
+
+.header__logo {
+  color: var(--clr-neutral);
+  text-align: center;
+  font-family: var(--ff-accent);
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.header__logo-text:nth-of-type(1) {
+  line-height: 1;
+}
+
+.header__logo-text:nth-of-type(2) {
+  font-family: var(--ff-regular);
+  font-size: 1.2rem;
+  letter-spacing: 8px;
+}
+
+.header__title {
+  text-align: center;
+  background-color: var(--clr-accent);
+  font-family: var(--ff-accent);
+  font-weight: 400;
+  font-size: 5rem;
+  color: var(--clr-neutral);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+}
+
+.header svg path {
+  fill: var(--clr-accent);
+}
+
+/* Main */
+
+.main {
+  padding-top: 5rem;
+}
+
+.main__intro {
+  text-align: center;
+  font-size: 1.1rem;
+}
