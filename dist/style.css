@@ -48,10 +48,12 @@ h6 {
 }
 
 :root {
-  --container-max-width: 40.625rem;
+  --container-max-width: 56.25rem;
   --container-width: calc(100% - 2.5rem);
   --clr-accent: #FE5F55;
-  --clr-neutral: #E4E2DD;
+  --clr-strong: #121212;
+  --clr-neutral-1: #fff;
+  --clr-neutral-2: rgba(18, 18, 18, 0.2);
   --ff-accent: 'Poiret One', cursive;
   --ff-regular: 'Montserrat', sans-serif;
 }
@@ -73,15 +75,16 @@ body {
 
 .header {
   background-color: var(--clr-accent);
-  padding-block: 1rem;
+  padding-top: 1rem;
 }
 
 .header__logo {
-  color: var(--clr-neutral);
+  color: var(--clr-neutral-1);
   text-align: center;
   font-family: var(--ff-accent);
-  font-size: 4rem;
+  font-size: 5.5rem;
   text-transform: uppercase;
+  margin-top: 2rem;
 }
 
 .header__logo-text:nth-of-type(1) {
@@ -94,20 +97,53 @@ body {
   letter-spacing: 8px;
 }
 
-.header__title {
-  text-align: center;
-  background-color: var(--clr-accent);
-  font-family: var(--ff-accent);
-  font-weight: 400;
-  font-size: 5rem;
-  color: var(--clr-neutral);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 3rem;
 }
 
-.header svg path {
-  fill: var(--clr-accent);
+.header__nav-btn {
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: 3px;
+  color: var(--clr-neutral-1);
+  padding: .5rem 1.5rem;
+  border: 1px solid var(--clr-neutral-1);
+  border-bottom: none;
+  position: relative;
+  z-index: 99;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.header__nav-btn.active {
+  background-color: var(--clr-neutral-1);
+  color: var(--clr-accent);
+}
+
+.header__nav-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: var(--clr-neutral-1);
+  z-index: -1;
+  transition: inherit;
+}
+
+.header__nav-btn:hover {
+  color: var(--clr-accent);
+}
+
+.header__nav-btn:hover::before {
+  height: 100%;
 }
 
 /* Main */
@@ -119,4 +155,29 @@ body {
 .main__intro {
   text-align: center;
   font-size: 1.1rem;
+}
+
+/* Menu */
+
+.menu {
+  margin-block: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.menu__item {
+  text-align: center;
+  border: 1px solid var(--clr-neutral-2);
+  text-transform: uppercase;
+}
+
+.menu__item-name {
+  font-family: var(--ff-accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding: .5rem 0;
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-1);
 }
