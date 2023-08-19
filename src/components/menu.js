@@ -44,9 +44,19 @@ const menu = [
 ];
 
 const createMenu = () => {
-	const menuContainer = createElement('section', null, ['menu', 'container']);
+	const menuContainer = createElement('main', null, ['menu', 'container']);
 
-	let menuCards = [];
+	const menuCards = createCards();
+
+	for (let card of menuCards) {
+		menuContainer.appendChild(card);
+	}
+
+	return menuContainer;
+};
+
+const createCards = () => {
+	const menuCards = [];
 
 	for (let i = 0; i < menu.length; i++) {
 		const cardImage = createElement('img', null, 'menu__item-image');
@@ -61,11 +71,7 @@ const createMenu = () => {
 		menuCards.push(menuCard);
 	}
 
-	for (let card of menuCards) {
-		menuContainer.appendChild(card);
-	}
-
-	return menuContainer;
-};
+	return menuCards;
+}
 
 export default createMenu;

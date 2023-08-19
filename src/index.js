@@ -1,13 +1,14 @@
+import loadHeader from "./functions/load-header";
 import loadHome from "./functions/load-home";
-import loadMenu from "./functions/load-menu";
+import buttonClick from "./functions/header-btn-click";
 
-loadMenu();
+loadHeader();
+loadHome();
 
-const btnHome = document.querySelector('.btn-home');
-const btnContact = document.querySelector('.btn-contact');
-const btnAbout = document.querySelector('.btn-about');
+const headerButtons = document.querySelectorAll('.header__nav-btn');
 
-
-btnContact.addEventListener('click', () => {
-  console.log('contact')
-})
+headerButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    buttonClick(e.target);
+  });
+});
